@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Topic
+from .models import Pizza
 
 admin.site.register(Pizza)
