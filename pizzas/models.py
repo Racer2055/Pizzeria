@@ -13,7 +13,7 @@ class Topping(models.Model):
     text = models.TextField()
 
     class Meta:
-        verbose_name_plural = 'entries'
+        verbose_name_plural = 'toppings'
     
     def __str__(self):
         return f"{self.text[:50]}"

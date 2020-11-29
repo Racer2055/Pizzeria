@@ -3,6 +3,8 @@ from . import views
 
 app_name = 'pizzas'
 
-urlpatterns = {
+urlpatterns = [
     path('', views.index, name = 'index'),
-}
+    path('pizzas', views.pizzas, name = 'pizzas'),
+    path('pizzas/<int:pizza_id>/', view.pizza, name = 'pizza'),
+]
