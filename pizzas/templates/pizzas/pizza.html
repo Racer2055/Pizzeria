@@ -3,11 +3,13 @@
 {% block content %}
 
     <p>Pizza : {{ pizza }}</p>
-
+    {% for i in image %}
+    <img src="/media/images/{{ i }}.jpg" width = "500" /> 
+    {% endfor %}
     <ul>
         {% for topping in toppings %}
         <li>
-            <p>Variation {{ topping.id }}:</p>
+            <p>Variation {{ forloop.counter }}:</p>
             <p>{{ topping.text|linebreaks }}</p>
         </li>
         {% empty %}

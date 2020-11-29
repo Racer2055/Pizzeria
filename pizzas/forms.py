@@ -1,8 +1,4 @@
 from django import forms
-from .models import *
+from .models import Topic
 
-class PizzaForm(forms.ModelForm):
-
-    class Meta:
-        model = Pizza
-        fields = ['name', 'pizza_img']
+class Topic Form

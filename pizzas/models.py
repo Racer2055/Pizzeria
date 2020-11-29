@@ -18,10 +18,15 @@ class Topping(models.Model):
     def __str__(self):
         return f"{self.text[:50]}"
 
+def upload_location(instance, filename):
+    filebase, extension = filename.split('.')
+    return f'images/{instance.text}.{extension}'
+
 class Pizza_Image(models.Model):
     pizza = models.ForeignKey(Pizza, on_delete = models.CASCADE)
-    pizza_img = models.ImageField(upload_to = 'images/')
     text = models.CharField(max_length = 200)
+    pizza_img = models.ImageField(upload_to = upload_location)
+    
 
     class Meta:
         verbose_name_plural = 'Pizza Images'
