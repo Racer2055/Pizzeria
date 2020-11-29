@@ -6,6 +6,8 @@
     {% for i in image %}
     <img src="/media/images/{{ i }}.jpg" width = "500" /> 
     {% endfor %}
+
+    <p style ="font-size:20px"><b><u>Toppings:</u></b></p>
     <ul>
         {% for topping in toppings %}
         <li>
@@ -16,5 +18,20 @@
         <li>No toppings have been decided for this pizza yet.</li>
         {% endfor %}
     </ul>
+        <p></p>
+        <p style ="font-size:20px"><b><u>Comment Section:</u></b></p>
+    <ul>
+        {% for com in comment %}
+        <li>
+            <p>{{ com.date_added|date:'M d, Y H:i' }}</p>
+            <p>{{ com.text|linebreaks }}</p>
+        </li>
+        {% empty %}
+        <li>There are no comments.</li>
+        {% endfor %}
+    </ul>
 
+    <p>
+        <a href="{% url 'pizzas:new_comment' pizza.id %}">Add a new comment</a>
+    </p>
 {% endblock content %}
