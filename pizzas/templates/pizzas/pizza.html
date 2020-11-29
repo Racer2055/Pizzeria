@@ -6,7 +6,10 @@
 
     <ul>
         {% for topping in toppings %}
-        <li>{{ topping }}</li>
+        <li>
+            <p>Variation {{ topping.id }}:</p>
+            <p>{{ topping.text|linebreaks }}</p>
+        </li>
         {% empty %}
         <li>No toppings have been decided for this pizza yet.</li>
         {% endfor %}
